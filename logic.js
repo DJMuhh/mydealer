@@ -36,5 +36,9 @@ function showStream(stream){
 	}
 }
 
-document.getElementById("caller").addEventListener("click", function() {
-	callSomeone(document.getElementById("partnerID").value)});
+function listeners(){
+  document.getElementById("caller").addEventListener("click", function() {
+  callSomeone(document.getElementById("partnerID").value)});
+}
+
+window.onload = listeners;
