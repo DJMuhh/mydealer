@@ -1,5 +1,6 @@
 var peer = new Peer();
 var personal_id;
+var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 peer.on('open', function(id) {
 	document.getElementById('ID').innerHTML = id;
