@@ -20,7 +20,7 @@ peer.on('call', function(call) {
 
 function callSomeone(partnerID){
 	getUserMedia({video: true, audio: true}, function(stream) {
-  	var call = peer.call('another-peers-id', stream);
+  	var call = peer.call(document.getElementById("partnerID"), stream);
   	call.on('stream', function(remoteStream) {
     	showStream(remoteStream);
   	});
