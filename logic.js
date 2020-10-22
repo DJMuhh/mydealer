@@ -11,7 +11,7 @@ peer.on('call', function(call) {
   getUserMedia({video: true, audio: true}, function(stream) {
     call.answer(stream); // Answer the call with an A/V stream.
     call.on('stream', function(remoteStream) {
-    	showStream(stream);
+    	showStream(remoteStream);
     });
   }, function(err) {
     console.log('Failed to get local stream' ,err);
@@ -22,7 +22,7 @@ function callSomeone(partnerID){
 	getUserMedia({video: true, audio: true}, function(stream) {
   	var call = peer.call('another-peers-id', stream);
   	call.on('stream', function(remoteStream) {
-    	showStream(stream);
+    	showStream(remoteStream);
   	});
 	}, function(err) {
   		console.log('Failed to get local stream' ,err);
